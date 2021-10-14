@@ -1,4 +1,4 @@
-const { readFile, writeFile } = require('fs')
+import { readFile, writeFile } from 'fs';
 
 console.log('start');
 readFile('./content/first.txt', 'utf-8', (err, result) => {
@@ -13,7 +13,7 @@ readFile('./content/first.txt', 'utf-8', (err, result) => {
       return
     }
     const second = result
-    writeFile('./content/result-async.txt', `Here is the result: ${first}, ${second}`, (err, result) => {
+    writeFile('./content/result-async.txt', `Here is the result: ${first}, ${second}`, (err) => {
       if (err) {
         console.log(err);
         return
